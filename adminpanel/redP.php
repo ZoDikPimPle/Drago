@@ -1,24 +1,28 @@
 <?php
 session_start();
-if ($_SESSION['ADMIN']) {
+
+if (isset($_SESSION['ADMIN'])) {
     $flag = 1;
 }
-$usname = $_SESSION['ADMIN']['login'];
+
+$usname = isset($_SESSION['ADMIN']['login']) ? $_SESSION['ADMIN']['login'] : null;
+
 include '../connect.php';
 
-//$DELsession =  $_GET ['DELsession'];
-if($DELsession > 0){
+$DELsession = isset($_GET['DELsession']) ? $_GET['DELsession'] : null;
+if ($DELsession > 0) {
     mysqli_query($dp, "DELETE FROM бронирования WHERE бронирования.Идентификатор_сеанса = $DELsession");
-    mysqli_query($dp , "DELETE FROM  сеансы WHERE  сеансы.Идентификатор = $DELsession");
+    mysqli_query($dp, "DELETE FROM сеансы WHERE сеансы.Идентификатор = $DELsession");
     header("Location: redP.php");
     exit;
 }
 
-$IDsession  =  $_GET ['IDsession'];
+$IDsession = isset($_GET['IDsession']) ? $_GET['IDsession'] : null;
 $sessions = mysqli_query($dp, "SELECT * FROM сеансы");
 $films = mysqli_query($dp, "SELECT * FROM фильмы");
 $cinemas = mysqli_query($dp, "SELECT * FROM кинотеатры");
 ?>
+
 
 <!DOCTYPE html>
 <html>
@@ -87,10 +91,12 @@ $cinemas = mysqli_query($dp, "SELECT * FROM кинотеатры");
                 <table align="center" class="cart-tables">
                     <tr>
                         <th>Название фильма</th>
-                        <th>Дата и время</th>
+                        <th>Дата</th>
+                        <th>Время</th>
                         <th>Кинотеатр</th>
-                        <th colspan=3>Действие</th>
+                        <th colspan="2">Действие</th>
                     </tr>
+
                     <form method="POST">
                         <tr>
                             <td>
@@ -104,7 +110,10 @@ $cinemas = mysqli_query($dp, "SELECT * FROM кинотеатры");
                                 </select>
                             </td>
                             <td>
-                                <input  type="datetime-local"  name= "add_session_datetime" placeholder="Введите дату и время">
+                                <input type="date" name="add_session_date" placeholder="Введите дату">
+                            </td>
+                            <td>
+                                <input type="time" name="add_session_time" placeholder="Введите время">
                             </td>
                             <td>
                                 <select name="add_session_cinema">
@@ -117,10 +126,11 @@ $cinemas = mysqli_query($dp, "SELECT * FROM кинотеатры");
                                 </select>
                             </td>
                             <td colspan="2" align="center">
-                                <input  type= "submit"  name = "add_session" value= "Добавить">
+                                <input type="submit" name="add_session" value="Добавить">
                             </td>
                         </tr>
                     </form>
+
                     <?php
                     $filter_film = isset($_GET['filter_film']) ? $_GET['filter_film'] : '';
                     $filter_cinema = isset($_GET['filter_cinema']) ? $_GET['filter_cinema'] : '';
@@ -185,24 +195,24 @@ $cinemas = mysqli_query($dp, "SELECT * FROM кинотеатры");
                             ?>
                             <tr>
                                 <td><?= $film_name ?></td>
-                                <td><?= date("d.m.Y H:i", strtotime($session['Время_начала'])) ?>
-                            </td>
-                            <td><?= $cinema_name ?></td>
-                            <td>
-                                <form action="redP.php" method="get">
-                                    <input type="hidden" name="edit" value="<?php echo $session['Идентификатор']; ?>">
-                                    <button type="submit">Редактировать</button>
-                                </form>
-                            </td>
+                                <td><?= date("d.m.Y", strtotime($session['Время_начала'])) ?></td>
+                                <td><?= date("H:i", strtotime($session['Время_начала'])) ?></td>
+                                <td><?= $cinema_name ?></td>
+                                <td>
+                                    <form action="redP.php" method="get">
+                                        <input type="hidden" name="edit" value="<?php echo $session['Идентификатор']; ?>">
+                                        <button type="submit">Редактировать</button>
+                                    </form>
+                                </td>
+                                <td>
+                                    <form action="redP.php" method="get">
+                                        <input type="hidden" name="IDsession" value="<?php echo $session['Идентификатор']; ?>">
+                                        <button type="submit">Удалить</button>
+                                    </form>
+                                </td>
+                            </tr>
 
-                            <td>
-                                <form action="redP.php" method="get">
-                                    <input type="hidden" name="IDsession" value="<?php echo $session['Идентификатор']; ?>">
-                                    <button type="submit">Удалить</button>
-                                </form>
-                            </td>
-                        </tr>
-                        <?php
+                            <?php
                     }
                 }
                 ?>
