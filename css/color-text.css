@@ -1,0 +1,44 @@
+:root {
+	/*
+	* это основной цвет, нанесенный на:
+	* фон, подчеркивание
+	*/
+	--primary: #262626;
+	--primary-disabled: #292222;
+	/*
+	* это вторичный цвет, нанесенный на:
+	* текст, граница
+	*/
+	--secondary: #FFFFFF;
+	--secondary-disabled: #434345;
+	/*
+	* это третий цвет, нанесенный на:
+	* кнопка,
+	*/
+	--third: #e38152;
+	--third-disabled: #c23000;
+	/*
+	* другие цвета, используемые на случайном объекте.
+	*/
+	--o1: #00b2c9;
+	--o1-disabled: #008191;
+}
+
+ .containers {   width: 75%;
+  border: 2px solid #ccc;
+  background-color: #eee;
+  border-radius: 5px; /* скругление углов блока */
+  padding: 16px; /* внутренние поля */
+  margin: 16px auto; /* внешние отступы */
+}
+
+ .containers img {
+  float: left; /* обтекание слева */
+  margin-right: 40px; /* пространство между аватаркой и абзацем */
+  width: 55px;
+}
+
+.containers span {
+  font-size: 18px;
+  margin-right: 15px;
+}

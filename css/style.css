@@ -1,0 +1,409 @@
+body{
+	background-image: url("../img/background.png");
+	background-size: 315px 185px;
+	background-repeat: no-repeat;
+}
+
+html, body {
+	scroll-behavior: smooth;
+}
+
+.serv-tables th {
+   font-weight: normal;
+   font-size: 14px;
+   color: #339;
+   padding: 10px 12px;
+   background: rgba(51, 51, 153, .1);
+}
+.serv-tables td {
+   color: #669;
+   border-top: 1px solid white;
+   padding: 10px 12px;
+   background: rgba(51, 51, 153, .2);
+   transition: .3s;
+}
+.serv-tables tr:hover td {
+   background: rgba(51, 51, 153, .1);
+}
+
+
+
+.cart-tables th {
+   font-weight: normal;
+   font-size: 14px;
+   color: #FFF;
+   padding: 10px 12px;
+   background: rgba(187,187,187);
+}
+.cart-tables td {
+   color: gray;
+   border-top: 1px solid white;
+   padding: 10px 12px;
+   background: rgba(187,187,187, .5);
+   transition: .3s;
+}
+.cart-tables tr:hover td {
+   background: rgba(187,187,187, .2);
+}
+
+
+
+div.raa {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: Montserrat, sans-serif;
+}
+
+a.raa {
+    color: #7c9ab7;
+    font-weight: bold;
+    text-decoration: none;
+}
+
+form.raa {
+    display: flex;
+    flex-direction: column;
+    width: 400px;
+}
+
+input.raa {
+    margin: 10px 0;
+    padding: 10px;
+    border: unset;
+    border-bottom: 2px solid #e3e3e3;
+    outline: none;
+}
+
+button.raa {
+    padding: 10px;
+    background: #e3e3e3;
+    border: unset;
+    cursor: pointer;
+}
+
+.logout {
+    color: #b7625c;
+}
+
+
+.table_lk {
+  border-radius: 10px;
+  -webkit-border-radius: 10px;
+  -moz-border-radius: 10px;
+  -khtml-border-radius: 10px;
+  border: 1px solid #000;
+  width: 600px;
+  background-color: #bbbbbb;
+  text-align: center;
+}
+
+.text_lk_name
+{
+    font-family:    Courier, New monospace;
+    font-size:      30px;
+	font-weight:    bold;
+	color: white;
+}
+
+.text_lk
+{
+    font-family:    Comic Sans MS, cursive;
+    font-size:      20px;
+	color: gray;
+}
+
+
+
+
+
+
+
+
+
+/* Оранжевая кнопка и наведение */
+.btn {
+	border: none;
+	background-color: var(--third);
+	padding: 10px 30px;
+	border-radius: 4px;
+	cursor: pointer;
+
+}
+
+.txt-uppercase{
+	text-transform: uppercase !important;
+}
+
+
+.btn:hover {
+	background-color: var(--third-disabled);
+}
+
+/* Синяя кнопка и наведение */
+.btn.blue {
+	background-color: var(--o1);
+}
+
+.btn.blue:hover {
+	background-color: var(--o1-disabled);
+}
+
+.container {
+	max-width: 1000px;
+	margin: 0 auto;
+	padding: 0 20px;
+}
+
+
+.scroll-down {
+	display: flex;
+	justify-content: center;
+	margin-top: 50px;
+	animation: scrolldown 1s infinite;
+}
+
+.scroll-down i {
+	font-size: 24px;
+}
+
+/* navbar */
+.navbar-brand-png {
+	width: 100%;
+	max-width: 100px;
+}
+
+.navbar-nav  {
+	display: flex;
+	justify-content: space-between;
+	margin: 20px;
+}
+
+.navbar-toggler {
+	display: none;
+	position: absolute;
+	z-index: 5;
+	right: 0;
+	top: 0;
+	margin: 20px;
+}
+
+.navbar-toggler i {
+	font-size: 30px;
+}
+
+.navbar-brand {
+	display: flex;
+	align-items: center;
+}
+
+
+.navs {
+	display: flex;
+	align-items: center;
+}
+
+.navs .navs-item {
+	margin: 0px 10px;
+	padding: 10px;
+	font-weight: bold;
+}
+
+.navs .navs-item a {
+	font-size: 14px;
+	color: var(--secondary-disabled);
+}
+
+.navs .navs-item a:hover {
+	color: var(--secondary);
+}
+
+.navs .navs-item a button {
+	font-size: 14px;
+}
+
+.navs .navs-item.notbtn {
+	margin: 0px 10px;
+	transition: 0.3s;
+	padding: 10px;
+	border-radius: 4px;
+	cursor: pointer;
+}
+
+.navs .navs-item.notbtn:hover {
+	/*transform: scale(1.1);*/
+	font-weight: bold;
+	background-color: rgb(0,0,0,0.3);
+}
+.navs .navs-item.notbtn:focus {
+	/*transform: scale(1.1);*/
+	font-weight: bold;
+	background-color: rgb(0,0,0,0.1);
+	border-radius: 4px;	
+}
+
+.navs-item .btn {
+	font-weight: bold;
+}
+/* navbar end */
+
+
+
+
+
+
+
+
+
+
+/* jumbotron */
+.jumbotron {
+	margin-top: 150px;
+}
+
+.jumbotron-items {
+	display: flex;
+	justify-content: space-between;
+}
+
+.jumbotron-items .jumbotron-item {
+	max-width: 500px;
+}
+
+.jumbotron-items .jumbotron-item img {
+	width: 400px;
+	height: auto;
+}
+
+.jumbotron-item .jumbotron-t {
+	font-size: 40px;
+	font-weight: bold;
+	text-align: right;
+	width: 100%;
+}
+
+.jumbotron-item .jumbotron-d {
+	margin-top: 15px;
+	font-size: 20px;
+	color: var(--secondary-disabled);
+}
+
+.jumbotron-item .jumbotron-buttons {
+	margin-top: 30px;
+}
+
+.jumbotron-item .jumbotron-buttons button {
+	margin: 10px 5px;
+}
+/* jumbotron end */
+
+
+
+
+
+
+
+
+
+
+/* features */
+.features-box .features-t {
+	font-size: 30px;
+	text-align: center;
+	margin-bottom: 25px;
+}
+
+.features-box .features-t::after {
+	content: "";
+	display: block;
+	border-bottom: 3px solid var(--third);
+	width: 10%;
+	margin: 0 auto;
+	border-radius: 50px;
+	margin-top: 7px;
+	min-width: 70px;
+}
+
+.features {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+}
+
+
+.features .feature {
+	display: flex;
+	width: 100%;
+	justify-content: space-between;
+	margin: 30px 0;
+}
+
+.features .feature:nth-child(2) {
+	flex-direction: row-reverse;
+}
+
+.feature .feature-img {
+	width: 100%;
+	max-width: 400px;
+	margin: 0 auto;
+}
+
+.feature .feature-info {
+	max-width: 400px;
+	border-radius: 5px;
+	padding: 10px;
+	margin: 10px auto;
+}
+
+.feature .feature-info .feature-info-d {
+	color: var(--secondary-disabled)
+}
+
+.feature .feature-info .feature-info-t {
+	font-size: 30px;
+	font-weight: bold;
+}
+/* features end */
+
+
+
+/* footer */
+.footer {
+	margin-top: 100px;
+	background-color: var(--third);
+}
+
+.footer .container span {
+	font-size: 24px;
+	font-weight: bold;
+	text-align: center;
+	width: 100%;
+	display: block;
+	padding: 15px;
+}
+
+.footer-items {
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: space-between;
+}
+
+.footer-item ul {
+	list-style: none;
+	padding: 15px;
+	margin: 0;
+}
+
+.footer-ul li {
+	margin: 5px 0;
+}
+
+.footer-ul li a {
+	color: var(--secondary-disabled);
+}
+
+.footer-ul li a:hover {
+	color: var(--secondary);
+}
+/* footer end */
