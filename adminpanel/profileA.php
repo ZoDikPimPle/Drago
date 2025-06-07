@@ -19,26 +19,12 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['exitA'])) {
 <head>
     <meta charset="utf-8">
     <title>AdminPANEL</title>
-    <link rel="icon" type="image/png" href="../img/logo.png">
+    <?php include 'navigation.php'; ?>
     <link rel="stylesheet" type="text/css" href="../css/color-text.css">
     <link rel="stylesheet" type="text/css" href="../css/style.css">
     <link rel="stylesheet" type="text/css" href="../css/shadow.css">
 </head>
 <body>
-<div class="navbar">
-    <div class="container">
-        <div class="navbar-nav">
-            <div class="navbar-brand">
-                <a href="profileA.php"><img class="navbar-brand-png" src="../img/logo_main.png"></a>
-            </div>
-            <div class="navs" id="navs">
-                <form method="post" class="raa">
-                    <div class="navs-item"><input class="btn txt-uppercase shadow-sm" type="submit" name="exitA" value="Выход"></div>
-                </form>
-            </div>
-        </div>
-    </div>
-</div>
 
 <div class="container">
     <div class="jumbotron-item">

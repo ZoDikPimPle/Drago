@@ -35,7 +35,7 @@ if (isset($_POST["UpdateFilm"])) {
 <head>
     <meta charset="utf-8">
     <title>AdminPANEL</title>
-    <link rel="icon" type="image/png" href="../img/logo.png">
+    <?php include 'navigation.php'; ?>
     <link rel="stylesheet" type="text/css" href="../css/color-text.css">
     <link rel="stylesheet" type="text/css" href="../css/style.css">
     <link rel="stylesheet" type="text/css" href="../css/shadow.css">
@@ -64,18 +64,7 @@ if (isset($_POST["UpdateFilm"])) {
 </head>
 <body>
 
-<div class="navbar">
-    <div class="container">
-        <div class="navbar-nav">
-            <div class="navbar-brand">
-                <a href="profileA.php"><img class="navbar-brand-png" src="../img/logo_main.png"><a>
-            </div>
-            <div class="navs" id="navs">
-                <div class="navs-item"><a href="../RAA/logout.php"><button class="btn txt-uppercase shadow-sm">Выход</button></a></div>
-            </div>
-        </div>
-    </div>
-</div>
+
 
 <div class="container">
     <div class="jumbotron-item">
