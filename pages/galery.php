@@ -105,14 +105,17 @@ if ($_SESSION['user']) {
                 <h1 class="features-t">Постеры фильмов</h1>
 
                 <div class="film-container">
-                    <?php 
+                    <?php
                     // Выбираем все фильмы из базы данных
-                    $films_query = mysqli_query($dp, "SELECT * FROM фильмы"); 
-                    while($film = mysqli_fetch_array($films_query)):
-                    ?>
+                    $films_query = mysqli_query($dp, "SELECT * FROM `фильмы`");
+                    while($film = mysqli_fetch_assoc($films_query)):
+                        ?>
                         <div class="film-item">
-                            <img src="<?= $film['Постер'] ?>" alt="<?= $film['title'] ?>" width="240" height="360" onclick="openModal('<?= $film['Постер'] ?>')">
-                            <p><?= $film['title'] ?></p>
+                            <img src="<?= htmlspecialchars($film['Постер']) ?>"
+                                 alt="<?= htmlspecialchars($film['Название'] ?? $film['title'] ?? '') ?>"
+                                 width="240" height="360"
+                                 onclick="openModal('<?= htmlspecialchars($film['Постер']) ?>')">
+                            <p><?= htmlspecialchars($film['Название'] ?? $film['title'] ?? 'Без названия') ?></p>
                         </div>
                     <?php endwhile; ?>
                 </div>
